@@ -1,21 +1,25 @@
 package ru.job4j.calculate;
+
 /**
-*Class класс для вывода строки aah aah aah
-*@author Aleksandr Sinyavtsev
-*@since 23.03.2019
-*/
+ *Calculate.
+ *@author Aleksandr Sinyavtsev (sinyavtsev.alek@yandex.ru).
+ *@version $Id$
+ *@since 24.03.2019
+ */
 public class Calculate {
-	
-/**
-*Метод для тестирования.
-*@param value строка для вывода в консоль
-*@return String value.
-*/
-	public String echo(String value) {
-		return String.format("%s %s %s", value, value, value);
-	}
-	public static void main(String[] args) {
-		Calculate calc = new Calculate();
-		System.out.println(calc.echo("aah"));
-	}
+    /**
+     *Main.
+     *@param args - args.
+     */
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+	/**
+     *Method echo.
+     *@param name Your name.
+     *@return Echo plus your name.
+     */
+    public String echo(String name) {
+        return "Eсho, echo, echo : " + name;
+    }
 }
