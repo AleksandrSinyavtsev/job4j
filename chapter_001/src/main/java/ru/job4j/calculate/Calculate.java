@@ -1,10 +1,3 @@
-/**
-* Package for calculate task.
-*
-* @author Aleksandr Sinyavtsev (parsentev@yandex.ru)
-* @version $Id$
-* @since 23.03.2019
-*/
 package ru.job4j.calculate;
 /**
 *Class класс для вывода строки aah aah aah
@@ -12,6 +5,7 @@ package ru.job4j.calculate;
 *@since 23.03.2019
 */
 public class Calculate {
+	
 /**
 *Метод для тестирования.
 *@param value строка для вывода в консоль
