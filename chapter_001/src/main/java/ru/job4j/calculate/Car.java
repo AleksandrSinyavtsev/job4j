@@ -10,8 +10,7 @@ public class Car {
         this.volume = this.volume+10*gas;
     }
     public boolean canDrive() {
-        boolean result = this.volume>0;
-        return result;
+        return this.volume>0;
     }
     public void gasInfo() {
         System.out.println("We can drive"+this.volume+"kilometers.");
