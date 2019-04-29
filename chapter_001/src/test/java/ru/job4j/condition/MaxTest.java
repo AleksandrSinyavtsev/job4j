@@ -17,4 +17,10 @@ public class MaxTest {
         int resalt = max.max(2, 1);
         assertThat(resalt, is(2));
     }
+    @Test
+    public  void whenLeftEquelRight() {
+        Max max = new Max();
+        int resalt = max.max(2, 2);
+        assertThat(resalt, is(2));
+    }
 }
