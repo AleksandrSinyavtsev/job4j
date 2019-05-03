@@ -4,14 +4,14 @@ public class Triangle {
     /**
      * Метод вычисления периметра по длинам сторон.
      * Формула.
-     * a + b + c
+     * a + b + c/2
      * @param a расстояние между точками a b
      * @param b расстояние между точками a c
      * @param c расстояние между точками b c
      * @return Перимент.
      */
     public double period(double a, double b, double c) {
-        return a + b + c;
+        return (a + b + c)/2;
     }
     /**
      * Метод должен вычислить прощадь треугольника.
