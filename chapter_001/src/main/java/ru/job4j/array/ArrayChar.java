@@ -7,10 +7,8 @@ package ru.job4j.array;
  */
 
 public class ArrayChar {
-
     /**
      * Проверяет. что слово начинается с префикса.
-     *
      * @param prefix префикс.
      * @return если слово начинаеться с префикса
      */
