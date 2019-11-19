@@ -34,6 +34,7 @@ public class StartUI {
                 tracker.replace(id, item);
                 System.out.println("The item successfully changed!!!");
             }
+            //Удаляем заявку.
             else if (select == 3) {
                 System.out.println("=== Delete items ====");
                 System.out.print("Enter id: ");
@@ -41,14 +42,23 @@ public class StartUI {
                 tracker.delete(id);
                 System.out.println("The item successfully delete!!!");
             }
+            //Ищем заявку по id.
             else if (select == 4){
-
+                System.out.println("=== Search for an item by id ====");
+                System.out.print("Enter id: ");
+                String id = scanner.nextLine();
+                tracker.findById(id);
             }
+            //Ищем заявку по имени.
             else if (select == 5){
-
+                System.out.println("=== Search for an item by name ====");
+                System.out.print("Enter name: ");
+                String name = scanner.nextLine();
+                tracker.findByName(name);
             }
+            //Выход из программы.
             else if (select == 6){
-
+                break;
             }
         }
     }
@@ -62,7 +72,6 @@ public class StartUI {
         System.out.println("4. Find item by Id");
         System.out.println("5. Find items by name");
         System.out.println("6. Exit Program");
-        System.out.println("Select:");
     }
     public static void main (String[] args) {
         Scanner scanner = new Scanner(System.in);
