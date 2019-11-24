@@ -1,4 +1,7 @@
 package ru.job4j.tracker;
+/**
+ * @author Sinyavtsev Aleksandr.
+ */
 
 import java.util.Arrays;
 import java.util.Random;
@@ -116,7 +119,6 @@ public class Tracker {
 
   /**
    * проверяет в цикле все элементы массива this.items, сравнивая id с аргументом String id.
-   *
    * @param id Уникальный номер заявки.
    * @return возвращает найденный Item.
    */
@@ -131,3 +133,4 @@ public class Tracker {
     return resalt;
   }
 }
+

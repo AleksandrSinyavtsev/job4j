@@ -1,4 +1,7 @@
 package ru.job4j.proftipe;
+/**
+ * @author Sinyavtsev Aleksandr.
+ */
 
 import ru.job4j.profession.Profession;
 
@@ -14,3 +17,4 @@ public class Engineer extends Profession {
     return this.design;
   }
 }
+

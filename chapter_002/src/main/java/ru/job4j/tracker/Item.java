@@ -1,4 +1,7 @@
 package ru.job4j.tracker;
+/**
+ * @author Sinyavtsev Aleksandr.
+ */
 
 import java.util.Objects;
 
@@ -27,3 +30,4 @@ public class Item {
     this.name = name;
   }
 }
+

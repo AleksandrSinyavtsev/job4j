@@ -80,8 +80,8 @@ public class TrackerTest {
         tracker.add(t5);
         Item t6 = new Item("test4");
         tracker.add(t6);
-        Item [] resalt = tracker.findByName("test1");
-        Item [] expect = {t1, t5};
+        Item[] resalt = tracker.findByName("test1");
+        Item[] expect = {t1, t5};
         assertThat(resalt, arrayContainingInAnyOrder(expect));
     }
 }

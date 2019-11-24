@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class StartUI {
   private void init(Scanner scanner, Tracker tracker) {
-    boolean run = false;
+    boolean run = true;
     while (run) {
       this.showMenu();
       System.out.print("Select: ");
@@ -73,3 +73,4 @@ public class StartUI {
     new StartUI().init(scanner, tracker);
   }
 }
+

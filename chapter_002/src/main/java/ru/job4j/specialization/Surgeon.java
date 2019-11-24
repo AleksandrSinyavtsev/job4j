@@ -1,4 +1,7 @@
 package ru.job4j.specialization;
+/**
+ * @author Sinyavtsev Aleksandr.
+ */
 
 import ru.job4j.proftipe.Doctor;
 
@@ -16,3 +19,4 @@ public class Surgeon extends Doctor {
     return this.operation;
   }
 }
+
