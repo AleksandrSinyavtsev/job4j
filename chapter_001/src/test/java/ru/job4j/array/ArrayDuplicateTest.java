@@ -7,10 +7,10 @@ import static org.junit.Assert.assertThat;
 public class ArrayDuplicateTest {
     @Test
     public void whenRemoveDuplicatesThenArrayWithoutDuplicate() {
-        String [] input = {"Привет", "Мир", "Привет", "Супер", "Мир"};
+        String[] input = {"Привет", "Мир", "Привет", "Супер", "Мир"};
         ArrayDuplicate clean = new ArrayDuplicate();
-        String [] resalt = clean.remove(input);
-        String [] expect = {"Привет", "Мир", "Супер"};
-        assertThat(resalt, arrayContainingInAnyOrder (expect));
+        String[] resalt = clean.remove(input);
+        String[] expect = {"Привет", "Мир", "Супер"};
+        assertThat(resalt, arrayContainingInAnyOrder(expect));
     }
 }

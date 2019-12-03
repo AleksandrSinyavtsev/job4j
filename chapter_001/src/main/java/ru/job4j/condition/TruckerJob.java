@@ -19,11 +19,9 @@ public class TruckerJob {
         }
         if (steve.canDrive('C')) {
             System.out.println("Steve can works on truckers!");
-        }
-        else if (steve.canDrive('B')) {
+        } else if (steve.canDrive('B')) {
             System.out.println("Steve can works on taxi.");
-        }
-        else {
+        } else {
            System.out.println("Steve does not have a job, but ride on motorbike!");
         }
     }

@@ -21,7 +21,7 @@ public class Driver {
      * @return
      */
     public boolean hasLicense() {
-        return this.license == 'A'|| this.license == 'B'|| this.license == 'C';
+        return this.license == 'A' || this.license == 'B' || this.license == 'C';
     }
 
     /**
