@@ -12,8 +12,8 @@ public class PointTest {
      */
     @Test
     public void whenZeroAndTenThenTen() {
-        Point point = new Point();
-        double result = point.distance(0, 0, 0, 10);
+        Point point = new Point(0, 0);
+        double result = point.distance(new Point(0, 10));
         assertThat(result, is(10D));
     }
 }
