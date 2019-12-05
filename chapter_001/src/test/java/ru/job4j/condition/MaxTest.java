@@ -12,15 +12,15 @@ public class MaxTest {
         assertThat(result, is(2));
     }
     @Test
-    public void whenMax2To1Then2() {
+    public void whenMax4To1Then2And4() {
         Max max = new Max();
-        int resalt = max.max(2, 1);
-        assertThat(resalt, is(2));
+        int resalt = max.max(2, 1, 4);
+        assertThat(resalt, is(4));
     }
     @Test
-    public  void whenLeftEquelRight() {
+    public  void when10MaxIn4Items() {
         Max max = new Max();
-        int resalt = max.max(2, 2);
-        assertThat(resalt, is(2));
+        int resalt = max.max(2, 2, 5, 10);
+        assertThat(resalt, is(10));
     }
 }
