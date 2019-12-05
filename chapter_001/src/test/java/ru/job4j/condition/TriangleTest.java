@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
 public class TriangleTest {
     @Test
     public void whenAreaSetThreePointsThenTriangleArea() {
+        // Создаём точки.
         Point a = new Point(0, 0);
         Point b = new Point(0, 2);
         Point c = new Point(2, 0);
