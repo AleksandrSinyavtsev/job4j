@@ -16,4 +16,10 @@ public class PointTest {
         double result = point.distance(new Point(0, 10));
         assertThat(result, is(10D));
     }
+    @Test
+    public void distance3DTest() {
+        Point point = new Point(0, 0, 0);
+        double result = point.distance3d(new Point(0, 10, 0));
+        assertThat(result, is(10D));
+    }
 }
