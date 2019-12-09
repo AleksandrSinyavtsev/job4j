@@ -76,10 +76,10 @@ public class Logic {
                 if (table[row][cell] == 1) {
                     wingor++;
                 }
-                if( table[cell][row] == 1) {
+                if (table[cell][row] == 1) {
                     winvert++;
                 }
-                if(wingor == size || winvert == size){
+                if (wingor == size || winvert == size) {
                     result = true;
                     break;
                 }
