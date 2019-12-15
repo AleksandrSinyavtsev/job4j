@@ -19,7 +19,7 @@ public class MagicBall {
                 int ans = new Random().nextInt(3);
                 System.out.println("Ответ на ваш вопрос: " + question + " - " + answers[ans]);
             } else {
-                break;
+                run = false;
             }
         }
     }
