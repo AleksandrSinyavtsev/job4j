@@ -15,63 +15,43 @@ public class Matches {
          */
         int count = 11;
         int attempt = 1;
+        String gamer;
         System.out.println("=== Игра начинается! ===");
         while (count > 0) {
             if (attempt % 2 != 0) {
-                System.out.println("=== Первый игрок делает ход! ==="
-                        + System.lineSeparator() + "Возьмите от 1 до 3 спичек");
-                Scanner input = new Scanner(System.in);
-                int select = Integer.valueOf(input.nextLine());
-                    if (select >= 1 && select <= 3) {
-                        count = count - select;
-                        attempt++;
-                        System.out.println("На столе осталось - " + count);
-                    } else {
-                        /**
-                         * Исключаем вариант когда игрок нарушает правила,
-                         * и берет либо больше положеного, либо ни одной спички.
-                         */
-                        System.out.println("=== Вы выбрали некорректное количество спичек! ===");
-                        System.out.println("=== Первый игрок делает ход! ==="
-                                + System.lineSeparator() + "Возьмите от 1 до 3 спичек");
-                        input = new Scanner(System.in);
-                        select = Integer.valueOf(input.nextLine());
-                            if (select >= 1 && select <= 3) {
-                                count = count - select;
-                                attempt++;
-                                System.out.println("На столе осталось - " + count);
-                            }
-                    }
+                gamer = "Первый";
             } else {
-                System.out.println("=== Второй игрок делает ход! ==="
-                        + System.lineSeparator() + "Возьмите от 1 до 3 спичек");
-                Scanner input = new Scanner(System.in);
-                int select = Integer.valueOf(input.nextLine());
+                gamer = "Второй";
+            }
+            System.out.println("=== " + gamer + " игрок делает ход! ==="
+                    + System.lineSeparator() + "Возьмите от 1 до 3 спичек");
+            Scanner input = new Scanner(System.in);
+            int select = Integer.valueOf(input.nextLine());
                 if (select >= 1 && select <= 3) {
                     count = count - select;
                     attempt++;
                     System.out.println("На столе осталось - " + count);
                 } else {
+                /**
+                * Исключаем вариант когда игрок нарушает правила,
+                * и берет либо больше положеного, либо ни одной спички.
+                */
                     System.out.println("=== Вы выбрали некорректное количество спичек! ===");
-                    System.out.println("=== Второй игрок делает ход! ==="
+                    System.out.println("=== " + gamer + " игрок делает ход! ==="
                             + System.lineSeparator() + "Возьмите от 1 до 3 спичек");
                     input = new Scanner(System.in);
                     select = Integer.valueOf(input.nextLine());
-                    if (select >= 1 && select <= 3) {
-                        count = count - select;
-                        attempt++;
-                        System.out.println("На столе осталось - " + count);
+                        if (select >= 1 && select <= 3) {
+                            count = count - select;
+                            attempt++;
+                            System.out.println("На столе осталось - " + count);
+                        }
                     }
-                }
-            }
             /**
              * Проверяем выигрышное условие и называем победителя.
              */
-            if (count <= 0 && attempt % 2 == 0) {
-                System.out.println("=== Первый игрок одержал победу!!! ===");
-            }
-            if (count <= 0 && attempt % 2 != 0) {
-                System.out.println("=== Второй игрок одержал победу!!! ===");
+            if (count <= 0) {
+                System.out.println("=== " + gamer + " игрок одержал победу!!! ===");
             }
         }
     }
