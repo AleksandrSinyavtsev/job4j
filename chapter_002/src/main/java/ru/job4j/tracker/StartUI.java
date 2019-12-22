@@ -46,7 +46,7 @@ public class StartUI {
     System.out.println("=== Search for an item by name ====");
     System.out.print("Enter name: ");
     String name = input.askStr("");
-    tracker.findByName(name);
+    System.out.println(tracker.findByName(name));
   }
 
   private void init(Input input, Tracker tracker) {
@@ -87,7 +87,7 @@ public class StartUI {
   }
 
   /**
-   * Main метод запускающий интерфейс.
+   * Main метод запускающий меню в консоли.
    * @param args .
    */
   public static void main(String[] args) {
