@@ -39,7 +39,7 @@ public class StartUI {
     System.out.println("=== Search for an item by id ====");
     System.out.print("Enter id: ");
     String id = input.askStr("");
-    tracker.findById(id);
+    System.out.format("Item ID: %s\n", tracker.findById(id).getId());
   }
 
   public static void searchByName(Input input, Tracker tracker) {
@@ -48,7 +48,7 @@ public class StartUI {
     String name = input.askStr("");
     Item[] items = tracker.findByName(name);
     for (Item item : items) {
-      System.out.println(item.getName());
+      System.out.format("Name: %s\n", item.getName());
     }
   }
 
