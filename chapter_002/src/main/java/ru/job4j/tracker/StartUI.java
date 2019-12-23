@@ -1,11 +1,13 @@
 package ru.job4j.tracker;
 
+/**
+ *
+ */
 
 public class StartUI {
   public static void createItem(Input input, Tracker tracker) {
     System.out.println("=== Create a new Item ====");
-    System.out.print("Enter name: ");
-    String name = input.askStr("");
+    String name = input.askStr("Enter name: ");
     Item item = new Item(name);
     tracker.add(item);
   }
@@ -17,38 +19,53 @@ public class StartUI {
 
   public static void editItem(Input input, Tracker tracker) {
     System.out.println("=== Edit mode ====");
-    System.out.print("Enter id: ");
-    String id = input.askStr("");
+    String id = input.askStr("Enter id: ");
     System.out.println(tracker.findById(id));
-    System.out.print("Enter new name: ");
-    String newName = input.askStr("");
-    Item item = new Item(newName);
-    tracker.replace(id, item);
-    System.out.println("The item successfully changed!!!");
+    if (tracker.findById(id) != null) {
+        String newName = input.askStr("Enter new name: ");
+        Item item = new Item(newName);
+        item.setId(id);
+        if (tracker.replace(id, item)) {
+            System.out.println("The item successfully changed!!!");
+        } else {
+            System.out.println("Item replacement failed!!!");
+        }
+    } else {
+        System.out.println("Item not found!!!");
+    }
   }
 
   public static void deleteItem(Input input, Tracker tracker) {
     System.out.println("=== Delete items ====");
-    System.out.print("Enter id: ");
-    String id = input.askStr("");
+    String id = input.askStr("Enter id: ");
     tracker.delete(id);
-    System.out.println("The item successfully delete!!!");
+    if (tracker.delete(id)) {
+        System.out.println("The item successfully delete!!!");
+    } else {
+        System.out.println("The item is not deleted, check the correct ID!");
+    }
   }
 
   public static void searchById(Input input, Tracker tracker) {
     System.out.println("=== Search for an item by id ====");
-    System.out.print("Enter id: ");
-    String id = input.askStr("");
-    System.out.format("Item ID: %s\n", tracker.findById(id).getId());
+    String id = input.askStr("Enter id: ");
+    if (id != null) {
+        System.out.format("Item ID: %s\n", tracker.findById(id).getId());
+    } else {
+        System.out.println("Item not found");
+    }
   }
 
   public static void searchByName(Input input, Tracker tracker) {
     System.out.println("=== Search for an item by name ====");
-    System.out.print("Enter name: ");
-    String name = input.askStr("");
+    String name = input.askStr("Enter name: ");
     Item[] items = tracker.findByName(name);
     for (Item item : items) {
-      System.out.format("Name: %s\n", item.getName());
+      if (item != null) {
+        System.out.format("Name: %s\n", item.getName());
+      } else {
+        System.out.println("Item not found!");
+      }
     }
   }
 
