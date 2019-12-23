@@ -4,9 +4,8 @@ package ru.job4j.tracker;
 public class StartUI {
   public static void createItem(Input input, Tracker tracker) {
     System.out.println("=== Create a new Item ====");
-    System.out.print("Enter name: ");
-    String name = input.askStr("");
-    Item item = new Item(name);
+    System.out.print("Enter name: " + input.askStr(""));
+    Item item = new Item(input.askStr(""));
     tracker.add(item);
   }
 
@@ -23,23 +22,33 @@ public class StartUI {
     System.out.print("Enter new name: ");
     String newName = input.askStr("");
     Item item = new Item(newName);
-    tracker.replace(id, item);
-    System.out.println("The item successfully changed!!!");
+    if (tracker.replace(id, item)) {
+      System.out.println("The item successfully changed!!!");
+    } else {
+      System.out.println("Item replacement failed!!!");
+    }
   }
 
   public static void deleteItem(Input input, Tracker tracker) {
     System.out.println("=== Delete items ====");
     System.out.print("Enter id: ");
     String id = input.askStr("");
-    tracker.delete(id);
-    System.out.println("The item successfully delete!!!");
+    if (tracker.delete(id)) {
+        System.out.println("The item successfully delete!!!");
+    } else {
+        System.out.println("The item is not deleted, check the correct ID!");
+    }
   }
 
   public static void searchById(Input input, Tracker tracker) {
     System.out.println("=== Search for an item by id ====");
     System.out.print("Enter id: ");
     String id = input.askStr("");
-    System.out.format("Item ID: %s\n", tracker.findById(id).getId());
+    if (id != null) {
+        System.out.format("Item ID: %s\n", tracker.findById(id).getId());
+    } else {
+        System.out.println("Item not found");
+    }
   }
 
   public static void searchByName(Input input, Tracker tracker) {
@@ -48,7 +57,11 @@ public class StartUI {
     String name = input.askStr("");
     Item[] items = tracker.findByName(name);
     for (Item item : items) {
-      System.out.format("Name: %s\n", item.getName());
+      if (item != null) {
+        System.out.format("Name: %s\n", item.getName());
+      } else {
+        System.out.println("Item not found!");
+      }
     }
   }
 

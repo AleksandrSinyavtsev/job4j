@@ -73,7 +73,8 @@ public class Tracker {
     for (int out = 0; out < this.position; out++) {
       if (items[out] != null && items[out].getId().equals(id)) {
         items[out] = null;
-        System.arraycopy(items, out + 1, this.items, out, this.position - 1);
+        System.arraycopy(items, out + 1, this.items, out, this.position - 1 - out);
+        position--;
         resalt = true;
         break;
       }
@@ -87,13 +88,6 @@ public class Tracker {
    * @return
    */
   public Item[] findAll() {
-    int i = 0;
-    Item[] resalt = new Item[this.position];
-    for (int out = 0; out < this.position; out++) {
-      if (this.items[out].getName() != null) {
-        resalt[i++] = this.items[out];
-      }
-    }
     return Arrays.copyOf(this.items, this.position);
   }
 

@@ -13,9 +13,9 @@ public class TrackerTest {
         tracker.add(test1);
         Item test2 = new Item("test2");
         tracker.add(test2);
-        Item[] resalt = tracker.findAll();
+        Item[] result = tracker.findAll();
         Item[] expect = {test1, test2};
-        assertThat(resalt, arrayContainingInAnyOrder(expect));
+        assertThat(result, arrayContainingInAnyOrder(expect));
     }
 
     @Test
@@ -52,8 +52,10 @@ public class TrackerTest {
         tracker.add(test2);
         Item test3 = new Item("3");
         tracker.add(test3);
-        boolean resalt = tracker.delete(test3.getId());
-        assertThat(resalt, is(true));
+        tracker.delete(test3.getId());
+        Item [] result = tracker.findAll();
+        Item [] expect = {test1, test2};
+        assertThat(result, is(expect));
     }
 
     @Test
