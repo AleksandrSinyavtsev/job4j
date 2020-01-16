@@ -28,10 +28,12 @@ public class StartUITest {
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("new item");
+        Item item = new Item("test 1");
         tracker.add(item);
-        String[] answers = {item.getId()};
+        Item nextItem = new Item("test 2");
+        tracker.add(nextItem);
+        String[] answers = {nextItem.getId()};
         StartUI.deleteItem(new StubInput(answers), tracker);
-        assertThat(tracker.delete(item.getId()), is(true));
+        assertThat(tracker.delete(nextItem.getId()), is(true));
     }
 }
