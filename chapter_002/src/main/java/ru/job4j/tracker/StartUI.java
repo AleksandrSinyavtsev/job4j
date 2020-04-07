@@ -4,8 +4,8 @@ package ru.job4j.tracker;
 public class StartUI {
   public static void createItem(Input input, Tracker tracker) {
     System.out.println("=== Create a new Item ====");
-    System.out.print("Enter name: " + input.askStr(""));
-    Item item = new Item(input.askStr(""));
+    String name = input.askStr("Enter name: ");
+    Item item = new Item(name);
     tracker.add(item);
   }
 
@@ -22,6 +22,8 @@ public class StartUI {
     System.out.print("Enter new name: ");
     String newName = input.askStr("");
     Item item = new Item(newName);
+    item.setId(id);
+    tracker.replace(id, item);
     if (tracker.replace(id, item)) {
       System.out.println("The item successfully changed!!!");
     } else {
@@ -33,6 +35,7 @@ public class StartUI {
     System.out.println("=== Delete items ====");
     System.out.print("Enter id: ");
     String id = input.askStr("");
+    tracker.delete(id);
     if (tracker.delete(id)) {
         System.out.println("The item successfully delete!!!");
     } else {
