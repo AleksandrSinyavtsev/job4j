@@ -1,4 +1,4 @@
-package ru.job4j.oop.Strategy;
+package ru.job4j.oop.strategy;
 
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;

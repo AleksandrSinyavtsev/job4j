@@ -53,8 +53,8 @@ public class TrackerTest {
         Item test3 = new Item("3");
         tracker.add(test3);
         tracker.delete(test3.getId());
-        Item [] result = tracker.findAll();
-        Item [] expect = {test1, test2};
+        Item[] result = tracker.findAll();
+        Item[] expect = {test1, test2};
         assertThat(result, is(expect));
     }
 

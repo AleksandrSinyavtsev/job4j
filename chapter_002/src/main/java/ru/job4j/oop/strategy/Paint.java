@@ -1,4 +1,4 @@
-package ru.job4j.oop.Strategy;
+package ru.job4j.oop.strategy;
 
 /**
  * @author Alexandr Sinyavtsev (sinyavtsev.alek@yandex.ru)
