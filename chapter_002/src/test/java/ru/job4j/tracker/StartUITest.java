@@ -5,7 +5,11 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.nullValue;
 
-
+/**
+ * @author Alexandr Sinyavtsev (sinyavtsev.alek@yandex.ru)
+ * @version $Id$
+ * @since 0.1
+ */
 
 public class StartUITest {
     @Test

@@ -16,11 +16,9 @@ public class StartUI {
 
   public static void editItem(Input input, Tracker tracker) {
     System.out.println("=== Edit mode ====");
-    System.out.print("Enter id: ");
-    String id = input.askStr("");
+    String id = input.askStr("Enter id: ");
     System.out.println(tracker.findById(id));
-    System.out.print("Enter new name: ");
-    String newName = input.askStr("");
+    String newName = input.askStr("Enter new name: ");
     Item item = new Item(newName);
     item.setId(id);
     tracker.replace(id, item);
@@ -33,8 +31,7 @@ public class StartUI {
 
   public static void deleteItem(Input input, Tracker tracker) {
     System.out.println("=== Delete items ====");
-    System.out.print("Enter id: ");
-    String id = input.askStr("");
+    String id = input.askStr("Enter id: ");
     tracker.delete(id);
     if (tracker.delete(id)) {
         System.out.println("The item successfully delete!!!");
@@ -45,8 +42,7 @@ public class StartUI {
 
   public static void searchById(Input input, Tracker tracker) {
     System.out.println("=== Search for an item by id ====");
-    System.out.print("Enter id: ");
-    String id = input.askStr("");
+    String id = input.askStr("Enter id: ");
     if (id != null) {
         System.out.format("Item ID: %s\n", tracker.findById(id).getId());
     } else {
@@ -56,8 +52,7 @@ public class StartUI {
 
   public static void searchByName(Input input, Tracker tracker) {
     System.out.println("=== Search for an item by name ====");
-    System.out.print("Enter name: ");
-    String name = input.askStr("");
+    String name = input.askStr("Enter name: ");
     Item[] items = tracker.findByName(name);
     for (Item item : items) {
       if (item != null) {
@@ -72,8 +67,7 @@ public class StartUI {
     boolean run = true;
     while (run) {
       this.showMenu();
-      System.out.print("Select: ");
-      int select = Integer.valueOf(input.askStr(""));
+      int select = Integer.valueOf(input.askStr("Select: "));
       //Создаем и добавляем в трекер новую заявку.
       if (select == 0) {
         StartUI.createItem(input, tracker);

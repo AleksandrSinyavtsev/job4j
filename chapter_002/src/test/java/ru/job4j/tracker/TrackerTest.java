@@ -5,6 +5,12 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.collection.IsArrayContainingInAnyOrder.arrayContainingInAnyOrder;
 
+/**
+ * @author Alexandr Sinyavtsev (sinyavtsev.alek@yandex.ru)
+ * @version $Id$
+ * @since 0.1
+ */
+
 public class TrackerTest {
     @Test
     public void when2CellsItemsNull() {
