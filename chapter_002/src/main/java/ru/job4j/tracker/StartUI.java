@@ -1,5 +1,11 @@
 package ru.job4j.tracker;
 
+/**
+ * @author Alexandr Sinyavtsev (sinyavtsev.alek@yandex.ru)
+ * @version $Id$
+ * @since 0.1
+ */
+
 public class StartUI {
 
     public void init(Input input, Tracker tracker, UserAction[] actions) {
@@ -22,13 +28,9 @@ public class StartUI {
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        UserAction[] actions = {
-                new CreateAction()
-        };
+        UserAction[] actions = {new CreateAction(), new EditAction(),
+                new DeleteAction(), new SearchByIdAction(),
+                new SearchByNameAction(), new FindAllAction()};
         new StartUI().init(input, tracker, actions);
-    }
-
-    private void insertActions() {
-        UserAction[] actions = {new CreateAction()};
     }
 }
