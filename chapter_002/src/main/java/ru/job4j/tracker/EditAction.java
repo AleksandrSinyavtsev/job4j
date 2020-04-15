@@ -20,6 +20,7 @@ public class EditAction implements UserAction {
         Item item = new Item(newName);
         item.setId(id);
         tracker.replace(id, item);
+        System.out.println("Item has replaced!");
         return true;
     }
 }

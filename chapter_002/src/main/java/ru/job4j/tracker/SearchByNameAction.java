@@ -18,7 +18,8 @@ public class SearchByNameAction implements UserAction {
         Item[] items = tracker.findByName(name);
         for (Item item : items) {
             if (item != null) {
-                System.out.format("Name: %s\n", item.getName());
+                System.out.println("Name: " + item.getName()+ " "
+                        + System.lineSeparator() + "Id: " + item.getId());
             } else {
                 System.out.println("Item not found!");
             }
