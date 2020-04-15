@@ -93,6 +93,8 @@ public class Tracker {
     for (int out = 0; out < this.position; out++) {
       if(this.items != null) {
         resalt[i++] = this.items[out];
+      } else {
+        return null;
       }
     }
     return resalt;
@@ -113,6 +115,8 @@ public class Tracker {
     for (int out = 0; out < this.position; out++) {
       if (this.items[out].getName().equals(key)) {
         resalt[i++] = this.items[out];
+      } else {
+        return null;
       }
     }
     return Arrays.copyOf(resalt, i);
