@@ -15,12 +15,16 @@ public class EditAction implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         String id = input.askStr("Enter id: ");
-        System.out.println(tracker.findById(id));
-        String newName = input.askStr("Enter new name: ");
-        Item item = new Item(newName);
-        item.setId(id);
-        tracker.replace(id, item);
-        System.out.println("Item has replaced!");
-        return true;
+        if (tracker.findById(id) != null) {
+            String newName = input.askStr("Enter new name: ");
+            Item item = new Item(newName);
+            item.setId(id);
+            tracker.replace(id, item);
+            System.out.println("Item has replaced!");
+            return true;
+        } else {
+            System.out.println("Item not found!");
+            return true;
+        }
     }
 }
