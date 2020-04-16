@@ -16,7 +16,7 @@ public class FindAllAction implements UserAction {
         int number = 1;
         Item[] result = tracker.findAll();
         for(Item item : result) {
-            System.out.println("#" + number + ". " + item);
+            System.out.println("#" + number + ". " + item.getName());
             number++;
         }
         return true;
