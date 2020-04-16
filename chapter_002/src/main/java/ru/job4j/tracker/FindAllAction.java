@@ -13,7 +13,12 @@ public class FindAllAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println(tracker.findAll());
+        int number = 1;
+        Item[] result = tracker.findAll();
+        for(Item item : result) {
+            System.out.println("#" + number + ". " + item);
+            number++;
+        }
         return true;
     }
 }
