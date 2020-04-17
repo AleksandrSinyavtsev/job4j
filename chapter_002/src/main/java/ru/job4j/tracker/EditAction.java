@@ -18,7 +18,6 @@ public class EditAction implements UserAction {
         String newName = input.askStr("Enter new name: ");
         Item item = new Item(newName);
         item.setId(id);
-        tracker.replace(id, item);
             if (tracker.replace(id, item)) {
                 System.out.println("Item has replaced!");
             } else {
