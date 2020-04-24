@@ -6,7 +6,7 @@ public class Fact {
         System.out.println(f.calc(0));
     }
 
-    public int calc(int n) {
+    public static int calc(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("n can't have a negative value.");
         }
