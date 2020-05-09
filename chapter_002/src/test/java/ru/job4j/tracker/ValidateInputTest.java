@@ -27,7 +27,7 @@ public class ValidateInputTest {
         ByteArrayOutputStream mem = new ByteArrayOutputStream();
         PrintStream out = System.out;
         System.setOut(new PrintStream(mem));
-        String[] data = {"six", "6"};
+        String[] data = {"7", "5"};
         ValidateInput input = new ValidateStubInput(data);
         input.askInt("Enter");
         assertThat(
