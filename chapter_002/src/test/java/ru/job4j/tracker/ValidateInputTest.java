@@ -13,8 +13,9 @@ public class ValidateInputTest {
         ByteArrayOutputStream mem = new ByteArrayOutputStream();
         PrintStream out = System.out;
         System.setOut(new PrintStream(mem));
-        String[] data = {"one", "1"};
-        ValidateInput input = new ValidateStubInput(data);
+        ValidateInput input = new ValidateInput(
+                new StubInput(new String[] {"one", "1"})
+        );
         input.askInt("Enter");
         assertThat(
                 mem.toString(),
@@ -27,12 +28,13 @@ public class ValidateInputTest {
         ByteArrayOutputStream mem = new ByteArrayOutputStream();
         PrintStream out = System.out;
         System.setOut(new PrintStream(mem));
-        String[] data = {"5", "5"};
-        ValidateInput input = new ValidateStubInput(data);
-        input.askInt("Enter");
+        String[] data = {"10", "1"};
+        ValidateInput input = new ValidateInput(
+                new StubInput(data));
+        input.askInt("Enter",2);
         assertThat(
                 mem.toString(),
-                is(String.format("Please enter validate data again.%n"))
+                is(String.format("Please select key from menu.%n"))
         );
         System.setOut(out);
     }
