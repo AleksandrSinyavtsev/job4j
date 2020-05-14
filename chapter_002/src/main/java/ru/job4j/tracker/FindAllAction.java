@@ -14,7 +14,7 @@ public class FindAllAction implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         int number = 1;
-        for(Item item : tracker.findAll()) {
+        for (Item item : tracker.findAll()) {
             System.out.println("#" + number + ". " + item.getName() + " id: " + item.getId());
             number++;
         }

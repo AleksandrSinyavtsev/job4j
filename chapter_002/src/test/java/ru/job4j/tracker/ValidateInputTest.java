@@ -31,7 +31,7 @@ public class ValidateInputTest {
         String[] data = {"10", "1"};
         ValidateInput input = new ValidateInput(
                 new StubInput(data));
-        input.askInt("Enter",2);
+        input.askInt("Enter", 2);
         assertThat(
                 mem.toString(),
                 is(String.format("Please select key from menu.%n"))

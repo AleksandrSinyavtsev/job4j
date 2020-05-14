@@ -20,7 +20,7 @@ public class SearchByNameActionTest {
         SearchByNameAction search = new SearchByNameAction();
         search.execute(new StubInput(new String[] {item.getName()}), tracker);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
-                .add("Name: " + item.getName()+ " "
+                .add("Name: " + item.getName() + " "
                         + System.lineSeparator() + "Id: " + item.getId())
                 .toString();
         assertThat(new String(out.toByteArray()), is(expect));

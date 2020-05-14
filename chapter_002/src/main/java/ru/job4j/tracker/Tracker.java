@@ -91,7 +91,7 @@ public class Tracker {
     int i = 0;
     Item[] resalt = new Item[this.position];
     for (int out = 0; out < this.position; out++) {
-      if(this.items != null) {
+      if (this.items != null) {
         resalt[i++] = this.items[out];
       } else {
         return null;
